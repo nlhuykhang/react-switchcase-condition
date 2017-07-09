@@ -17,8 +17,8 @@ const config = {
     docs: path.join(ROOT_PATH, 'docs'),
     ghPages: path.join(ROOT_PATH, 'gh-pages')
   },
-  filename: 'boilerplate',
-  library: 'Boilerplate'
+  filename: 'react-switch-case',
+  library: 'react-switch-case'
 };
 
 const common = {
