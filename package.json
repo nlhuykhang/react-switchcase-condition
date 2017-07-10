@@ -1,9 +1,9 @@
 {
-  "name": "react-component-boilerplate",
-  "description": "Boilerplate for React.js components",
-  "author": "Juho Vepsalainen",
-  "user": "survivejs",
-  "version": "5.0.0",
+  "name": "react-switchcase-condition",
+  "description": "Declarative way to render components conditionally",
+  "author": "Khang Nguyen-Le",
+  "user": "khangnlh",
+  "version": "0.0.1",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
@@ -74,11 +74,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/survivejs/react-component-boilerplate.git"
+    "url": "https://github.com/nlhuykhang/react-switchcase-condition.git"
   },
-  "homepage": "https://survivejs.github.io/react-component-boilerplate/",
+  "homepage": "https://github.com/nlhuykhang/react-switchcase-condition",
   "bugs": {
-    "url": "https://github.com/survivejs/react-component-boilerplate/issues"
+    "url": "https://github.com/nlhuykhang/react-switchcase-condition/issues"
   },
   "jest": {
     "collectCoverage": true,
