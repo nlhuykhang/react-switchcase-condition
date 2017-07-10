@@ -17,12 +17,12 @@ const pages = [
   {
     path: '/',
     title: 'Introduction',
-    component: require('../README.md')
+    component: require('../README.md'),
   }, {
     path: 'test',
     title: 'Test',
-    component: require('./demo').default
-  }
+    component: require('./demo').default,
+  },
 ];
 
 // Catalog - logoSrc="../images/logo.png"
@@ -42,7 +42,7 @@ ReactDOM.render(
       specimens={{
         javascript: props => <CodeSpecimen {...props} lang="javascript" />,
         js: props => <CodeSpecimen {...props} lang="javascript" />,
-        jsx: props => <ReactSpecimen {...props} />
+        jsx: props => <ReactSpecimen {...props} />,
       }}
       title={title}
     />
