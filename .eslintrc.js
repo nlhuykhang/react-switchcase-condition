@@ -10,7 +10,13 @@ module.exports = {
     "react"
   ],
   "rules": {
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["warn", {
+      "imports": "ignore",
+      "exports": "ignore",
+      "functions": "ignore",
+      "objects": "always",
+      "arrays": "always"
+    }],
     "global-require": 0,
     "prefer-arrow-callback": 0,
     "func-names": 0,
