@@ -3,7 +3,7 @@
   "description": "Declarative way to render components conditionally",
   "author": "Khang Nguyen-Le",
   "user": "khangnlh",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
