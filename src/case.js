@@ -1,24 +1,7 @@
-import React, {
-  Component,
-  // cloneElement,
-} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Case extends Component {
-  componentDidMount() {}
-  render() {
-    const {
-      component: C,
-      componentProps,
-    } = this.props;
-
-    return (
-      <div className="">
-        <C {...componentProps} />
-      </div>
-    );
-  }
-}
+const Case = ({ component: C, componentProps, }) => <C {...componentProps} />;
 
 Case.componentName = 'Case';
 Case.propTypes = {
@@ -30,3 +13,5 @@ Case.propTypes = {
 Case.defaultProps = {
   componentProps: {},
 };
+
+export default Case;

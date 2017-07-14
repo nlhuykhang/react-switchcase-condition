@@ -1,21 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Default extends Component {
-  componentDidMount() {}
-  render() {
-    const {
-      component: C,
-      componentProps,
-    } = this.props;
-
-    return (
-      <div className="">
-        <C {...componentProps} />
-      </div>
-    );
-  }
-}
+const Default = ({ component: C, componentProps, }) => <C {...componentProps} />;
 
 Default.componentName = 'Default';
 Default.propTypes = {
@@ -27,3 +13,5 @@ Default.propTypes = {
 Default.defaultProps = {
   componentProps: {},
 };
+
+export default Default;
