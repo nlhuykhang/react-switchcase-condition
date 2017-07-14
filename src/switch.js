@@ -6,10 +6,10 @@ export default class Switch extends Component {
   render() {
     const children = Children.toArray(this.props.children);
     const caseToRender = children.filter(
-      child => child.type.displayName === 'Case' && child.props.cond
+      child => child.type.name === 'Case' && child.props.cond
     )[0];
 
-    const defaultChild = children.filter(child => child.type.displayName === 'Default');
+    const defaultChild = children.filter(child => child.type.name === 'Default');
 
     if (
       defaultChild.length !== 1 ||
@@ -18,7 +18,7 @@ export default class Switch extends Component {
       throw new Error('There has to be exact one Default component');
     }
 
-    const childToRender = caseToRender || defaultChild;
+    const childToRender = caseToRender || defaultChild[0];
 
     return (
       <div className="">
@@ -37,8 +37,8 @@ Switch.propTypes = {
       if (
         !child ||
         !child.type ||
-        !(child.type.displayName === 'Case' ||
-        child.type.displayName === 'Default')
+        !(child.type.name === 'Case' ||
+        child.type.name === 'Default')
       ) {
         error = new Error(`${componentName} only accepts children of type Case or Default.`);
       }
