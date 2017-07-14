@@ -20,6 +20,7 @@ export default class Case extends Component {
   }
 }
 
+Case.componentName = 'Case';
 Case.propTypes = {
   component: PropTypes.func.isRequired,
   // eslint-disable-next-line react/forbid-prop-types

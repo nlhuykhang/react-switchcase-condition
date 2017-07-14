@@ -17,6 +17,7 @@ export default class Default extends Component {
   }
 }
 
+Default.componentName = 'Default';
 Default.propTypes = {
   component: PropTypes.func.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
