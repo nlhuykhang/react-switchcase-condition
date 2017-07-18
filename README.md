@@ -1,6 +1,6 @@
 # React Switch Case Condition
 
-[![Build Status](https://travis-ci.org/nlhuykhang/react-switch-case.svg?branch=master)](https://travis-ci.org/nlhuykhang/react-switch-case)
+[![Build Status](https://travis-ci.org/nlhuykhang/react-switchcase-condition.svg?branch=master)](https://travis-ci.org/nlhuykhang/react-switchcase-condition)
 
 <!-- [![bitHound Score](https://www.bithound.io/github/survivejs/react-component-boilerplate/badges/score.svg)](https://www.bithound.io/github/survivejs/react-component-boilerplate) [![Dependency Status](https://david-dm.org/survivejs/react-component-boilerplate.svg)](https://david-dm.org/survivejs/react-component-boilerplate) -->
 
