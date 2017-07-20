@@ -1,27 +1,44 @@
 import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';
 
+function isCaseAndCondTrueComponent(component) {
+  return component.type.componentName === 'Case' && component.props.cond;
+}
+
+function isDefaultComponent(component) {
+  return component.type.componentName === 'Default';
+}
+
+function isOnlyDefaultChild(childList) {
+  return childList.length === 1 && childList[0];
+}
+
+function isCaseOrDefaultComponent(component) {
+  return component && component.type &&
+    (component.type.componentName === 'Case' ||
+    component.type.componentName === 'Default');
+}
+
 export default class Switch extends Component {
   componentDidMount() {}
   render() {
-    const children = Children.toArray(this.props.children);
-    const caseToRender = children.filter(
-      child => child.type.componentName === 'Case' && child.props.cond
-    )[0];
+    const {
+      children: childrenObj,
+      ...restProps
+    } = this.props;
+    const children = Children.toArray(childrenObj);
+    const caseToRender = children.filter(isCaseAndCondTrueComponent)[0];
 
-    const defaultChild = children.filter(child => child.type.componentName === 'Default');
+    const defaultChild = children.filter(isDefaultComponent);
 
-    if (
-      defaultChild.length !== 1 ||
-      !defaultChild[0]
-    ) {
+    if (!isOnlyDefaultChild(defaultChild)) {
       throw new Error('There has to be exact one Default component');
     }
 
     const childToRender = caseToRender || defaultChild[0];
 
     return (
-      <div className="">
+      <div {...restProps}>
         {childToRender}
       </div>
     );
@@ -35,12 +52,7 @@ Switch.propTypes = {
     const prop = props[propName];
 
     React.Children.forEach(prop, function (child) {
-      if (
-        !child ||
-        !child.type ||
-        !(child.type.componentName === 'Case' ||
-        child.type.componentName === 'Default')
-      ) {
+      if (!isCaseOrDefaultComponent(child)) {
         error = new Error(`${componentName} only accepts children of type Case or Default.`);
       }
     });
